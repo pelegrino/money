@@ -1,5 +1,7 @@
 package br.com.pelegrino.money.model;
 
+import java.util.Objects;
+
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -56,5 +58,25 @@ public class Pessoa {
 	public void setAtivo(Boolean ativo) {
 		this.ativo = ativo;
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(ativo, codigo, endereco, nome);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Pessoa other = (Pessoa) obj;
+		return Objects.equals(ativo, other.ativo) && Objects.equals(codigo, other.codigo)
+				&& Objects.equals(endereco, other.endereco) && Objects.equals(nome, other.nome);
+	}
+	
+	
 	
 }

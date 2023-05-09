@@ -3,6 +3,9 @@ package br.com.pelegrino.money.resource;
 import java.util.List;
 import java.util.Optional;
 
+import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.http.HttpStatus;
@@ -17,12 +20,14 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.pelegrino.money.event.RecursoCriadoEvent;
 import br.com.pelegrino.money.model.Categoria;
 import br.com.pelegrino.money.repository.CategoriaRepository;
-import javax.servlet.http.HttpServletResponse;
-import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/categorias")
 public class CategoriaResource {
+	
+	public CategoriaResource() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	@Autowired
 	private CategoriaRepository categoriaRepository;
