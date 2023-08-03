@@ -22,7 +22,7 @@ public class Pessoa {
 	private String nome;
 	
 	@Embedded
-	private String endereco;
+	private Endereco endereco;
 	
 	@NotNull
 	private Boolean ativo;
@@ -43,11 +43,11 @@ public class Pessoa {
 		this.nome = nome;
 	}
 
-	public String getEndereco() {
+	public Endereco getEndereco() {
 		return endereco;
 	}
 
-	public void setEndereco(String endereco) {
+	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
 
@@ -76,7 +76,5 @@ public class Pessoa {
 		return Objects.equals(ativo, other.ativo) && Objects.equals(codigo, other.codigo)
 				&& Objects.equals(endereco, other.endereco) && Objects.equals(nome, other.nome);
 	}
-	
-	
 	
 }
