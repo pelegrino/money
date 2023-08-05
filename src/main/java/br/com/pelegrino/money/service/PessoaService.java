@@ -26,7 +26,7 @@ public class PessoaService {
 		pessoaRepository.save(pessoaSalva);
 	}
 	
-	private Pessoa buscarPessoaPeloCodigo(Long codigo) {
+	public Pessoa buscarPessoaPeloCodigo(Long codigo) {
 		Optional<Pessoa> pessoaOptional = pessoaRepository.findById(codigo);
 		
 		if (pessoaOptional.isPresent()) {
