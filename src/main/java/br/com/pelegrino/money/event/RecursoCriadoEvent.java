@@ -2,10 +2,10 @@ package br.com.pelegrino.money.event;
 
 import java.net.URI;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.context.ApplicationEvent;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
-import javax.servlet.http.HttpServletResponse;
 
 public class RecursoCriadoEvent extends ApplicationEvent {
 
