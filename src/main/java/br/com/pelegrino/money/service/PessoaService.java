@@ -27,7 +27,7 @@ public class PessoaService {
 	}
 	
 	public Pessoa buscarPessoaPeloCodigo(Long codigo) {
-		Optional<Pessoa> pessoaOptional = pessoaRepository.findById(codigo);
+		Pessoa pessoaOptional = pessoaRepository.findOne(codigo);
 		
 		if (pessoaOptional.isPresent()) {
 			return pessoaOptional.get();

@@ -1,7 +1,6 @@
 package br.com.pelegrino.money.resource;
 
 import java.util.List;
-import java.util.Optional;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
@@ -44,8 +43,8 @@ public class CategoriaResource {
 	}
 	
 	@GetMapping("/{codigo}")
-	public ResponseEntity<Optional<Categoria>> buscarPeloCodigo(@PathVariable Long Codigo) {
-		Optional<Categoria> categoria = categoriaRepository.findById(Codigo);
+	public ResponseEntity<Categoria> buscarPeloCodigo(@PathVariable Long Codigo) {
+		Categoria categoria = categoriaRepository.findOne(Codigo);
 		return categoria != null ? ResponseEntity.ok(categoria) : ResponseEntity.notFound().build();
 	}
 }
